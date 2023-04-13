@@ -1,20 +1,13 @@
 import React from 'react';
 import { useWeatherInfo } from './context/MainContext';
-import CityInfo from './components/CityInfo';
-import TodayInfo from './components/TodayInfo';
+
+import HomePage from './container/Home';
 function App() {
-    const { weather } = useWeatherInfo();
+    // const { weather } = useWeatherInfo();
 
     return (
         <>
-
-            <div className="container">
-                {weather && <CityInfo />}
-
-                {weather && <TodayInfo />}
-            </div>
-
-           
+            <HomePage />
         </>
     );
 }
