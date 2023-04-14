@@ -1,14 +1,14 @@
 import React from 'react';
 import CityInfo from '../CityInfo';
-import TodayInfo from '../TodayInfo';
+import CurrentWeather from '../CurrentWeather';
 
 function HomePage() {
     return (
         <main>
             <div className="container">
-                <div className="current-weather">
+                <div className="current-info">
                     <CityInfo />
-                    <TodayInfo />
+                    <CurrentWeather />
                 </div>
                 <div className='forecast'>
                     

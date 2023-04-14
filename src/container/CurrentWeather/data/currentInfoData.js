@@ -1,6 +1,6 @@
-import Icon from '../../../icons'
+import Icon from '../../../icons';
 
-export const todayInfoData = (weather) => {
+export const currentInfoData = (weather) => {
     return [
         {
             id: 1,

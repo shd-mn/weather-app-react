@@ -1,12 +1,13 @@
 import React from 'react';
 import { useWeatherInfo } from '../../context/MainContext';
-import { todayInfoData } from './data/todayInfoData';
+import { currentInfoData } from './data/currentInfoData';
 
-function TodayInfo() {
+function CurrentWeather() {
     const { currentWeather } = useWeatherInfo();
-    const info = todayInfoData(currentWeather);
+    const info = currentInfoData(currentWeather);
+
     return (
-        <div className="today-info">
+        <div className="current-weather">
             {info.map((data) => (
                 <div key={data.id} className="info">
                     {data.icon}
@@ -22,4 +23,4 @@ function TodayInfo() {
     );
 }
 
-export default TodayInfo;
+export default CurrentWeather;

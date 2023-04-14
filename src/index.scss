@@ -63,12 +63,12 @@ p {
     font-size: 1.8rem;
 }
 
-.current-weather {
+.current-info {
     display: flex;
     justify-content: space-between;
 }
 
-.today-info {
+.current-weather {
     display: flex;
     flex-direction: column;
     gap: 3rem;
