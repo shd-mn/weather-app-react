@@ -1,19 +1,18 @@
 import React from 'react';
 import CityInfo from '../CityInfo';
 import CurrentWeather from '../CurrentWeather';
+import Forecast from '../Forecast';
 
 function HomePage() {
     return (
         <main>
-            <div className="container">
+            <section className="container">
                 <div className="current-info">
                     <CityInfo />
                     <CurrentWeather />
                 </div>
-                <div className='forecast'>
-                    
-                </div>
-            </div>
+                <Forecast />
+            </section>
         </main>
     );
 }
