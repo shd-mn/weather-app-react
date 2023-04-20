@@ -1,0 +1,17 @@
+@media (max-width: 1366px) {
+    
+
+    html {
+        font-size: 9px;
+    }
+    .daily-forecast {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .daily-forecast {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
