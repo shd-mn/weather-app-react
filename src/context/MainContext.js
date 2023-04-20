@@ -1,18 +1,16 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState } from 'react';
 import axios from 'axios';
-import { mock5days } from '../api/mock5days';
-import { mockCurrentWeather } from '../api/mockCurrentWeather';
+import { weatherData } from '../mock/OneCallAPI';
+import { currentWeather } from '../mock/currentWeather';
 
 const MainContext = createContext();
 
-
 const Provider = ({ children }) => {
-    const [currentWeather, setCurrentWeather] = useState(mockCurrentWeather)
-    const [forecast, setForecast] = useState(mock5days)
-    const [weather, setWeather] = useState();
+    // const [currentWeather, setCurrentWeather] = useState(mockCurrentWeather)
+    // const [forecast, setForecast] = useState(mock5days.list)
+    const [weather, setWeather] = useState(weatherData);
 
     const [city, setCity] = useState();
-
 
     /* useEffect(() => {
         if (navigator.geolocation) {
@@ -51,13 +49,12 @@ const Provider = ({ children }) => {
 
     const data = {
         weather,
+        currentWeather,
         setWeather,
         city,
         setCity,
         getLocation,
         onChangeHandle,
-        currentWeather,
-        forecast
     };
 
     return <MainContext.Provider value={data}>{children}</MainContext.Provider>;

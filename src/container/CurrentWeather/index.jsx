@@ -1,10 +1,12 @@
 import React from 'react';
 import { useWeatherInfo } from '../../context/MainContext';
 import { currentInfoData } from './data/currentInfoData';
-
+import moment from 'moment';
 function CurrentWeather() {
-    const { currentWeather } = useWeatherInfo();
-    const info = currentInfoData(currentWeather);
+    const { weather } = useWeatherInfo();
+    const info = currentInfoData(weather.current);
+    const time = new Date(weather.current.dt * 1000)
+    console.log(moment(time).format('D MMM YYYY h:m'))
 
     return (
         <div className="current-weather">
