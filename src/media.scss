@@ -1,17 +1,35 @@
-@media (max-width: 1366px) {
-    
-
+// 2xl (1536px) max-width: 1536px;
+@media (max-width: 96em) {
     html {
-        font-size: 9px;
-    }
-    .daily-forecast {
-        grid-template-columns: repeat(4, 1fr);
+        font-size: 56.25%;
     }
 }
 
-@media (max-width: 768px) {
-
-    .daily-forecast {
-        grid-template-columns: repeat(2, 1fr);
+// xl (1280px) max-width: 1280px;
+@media (max-width: 80em) {
+    html {
+        font-size: 50%;
     }
+
+    .forecast {
+        flex-wrap: wrap;
+    }
+}
+
+// lg (1024px) max-width: 1024px;
+@media (max-width: 64em) {
+    html {
+        font-size: 43.75%;
+    }
+}
+
+// md (768px) max-width: 768px;
+@media (max-width: 48em) {
+    html {
+        font-size: 37.5%;
+    }
+}
+
+// sm (640px) max-width: 640px;
+@media (max-width: 40em) {
 }
