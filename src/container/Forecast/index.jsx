@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import ScrollContainer from 'react-indiana-drag-scroll';
-import { useWeatherInfo } from '../../context/MainContext';
 import DailyForecast from './DailyForecast';
-import { Button } from '../../components/index';
 import HourlyForecast from './HourlyForecast';
+import { Button } from '../../components/index';
 
 const Forecast = () => {
-    const { weather } = useWeatherInfo();
-
+    const { weather, isLoading } = useSelector((state) => state);
     const [show, setShow] = useState(true);
-
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
     return (
-        <>
+        <section className="forecast">
             <div className="forecast-btn-group">
                 <Button
                     className={show ? '' : 'selected'}
@@ -27,17 +28,18 @@ const Forecast = () => {
                 </Button>
             </div>
 
-            <ScrollContainer className="forecast">
+            <ScrollContainer className="forecast-content">
                 {show ? (
                     <HourlyForecast weather={weather} />
                 ) : (
                     <DailyForecast weather={weather} />
                 )}
-                <div>
-                    <button type="button"></button>
-                </div>
             </ScrollContainer>
-        </>
+            {/* <div>
+                <button type="button">prev</button>
+                <button type="button">next</button>
+            </div> */}
+        </section>
     );
 };
 
