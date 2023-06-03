@@ -11,7 +11,10 @@ import Forecast from '../Forecast';
 
 function HomePage() {
     const dispatch = useDispatch();
+
     useEffect(() => {
+        dispatch(fetchLocation({ lat: 40.4093, lon: 49.8671 }));
+        dispatch(fetchWeather({ lat: 40.4093, lon: 49.8671 }));
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 function (position) {
@@ -23,8 +26,6 @@ function HomePage() {
                 },
                 function () {
                     dispatch(setAlert());
-                    dispatch(fetchLocation({ lat: 40.4093, lon: 49.8671 }));
-                    dispatch(fetchWeather({ lat: 40.4093, lon: 49.8671 }));
                 }
             );
         } else {
