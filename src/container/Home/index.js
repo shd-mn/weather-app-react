@@ -6,8 +6,8 @@ import {
     setAlert,
 } from '../../redux/weatherSlice';
 import Alert from '../../components/Alert';
-import CurrentWeather from '../CurrentWeather';
-import Forecast from '../Forecast';
+import CurrentWeather from '../CurrentWeather/CurrentWeather';
+import Forecast from '../Forecast/Forecast';
 
 function HomePage() {
     const dispatch = useDispatch();

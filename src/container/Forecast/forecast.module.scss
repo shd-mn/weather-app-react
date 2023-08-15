@@ -1,0 +1,45 @@
+@use '../../scss/' as *;
+
+.forecast {
+    min-height: 50%;
+    background-color: aqua;
+    height: auto;
+    padding-top: 4rem;
+}
+
+.forecast-btn-group {
+    margin-bottom: 2rem;
+
+    button {
+        background: $primary-clr;
+        color: $white;
+        font-size: 1.8rem;
+        padding: 3px 10px;
+        margin-left: 2rem;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $white;
+            color: #000;
+        }
+    }
+
+    .selected {
+        background-color: $white;
+        color: #000;
+    }
+}
+
+.forecast-content {
+    background-color: red;
+    height: 100%;
+    width: 94%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+
+    overflow-x: auto;
+    user-select: none;
+    margin-top: auto;
+}
