@@ -1,6 +1,8 @@
 import { currentInfoData } from './data/currentInfoData';
-import moment from 'moment';
+// import moment from 'moment';
 import { useSelector } from 'react-redux';
+import styles from './weatherInfo.module.scss';
+
 function WeatherInfo() {
     const { weather, isLoading } = useSelector((state) => state);
 
@@ -12,9 +14,9 @@ function WeatherInfo() {
     // console.log(moment(time).format('D MMM YYYY h:m'))
 
     return (
-        <div className="weather-info">
+        <div className={styles['weather-info']}>
             {info.map((data) => (
-                <div key={data.id} className="info">
+                <div key={data.id} className={styles.info}>
                     {data.icon}
                     <div>
                         <p>{data.title}</p>

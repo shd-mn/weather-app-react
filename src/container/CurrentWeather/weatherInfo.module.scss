@@ -1,0 +1,12 @@
+@use '../../scss/' as *;
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+}

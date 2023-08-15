@@ -1,11 +1,12 @@
 import React from 'react';
 import moment from 'moment';
+import styles from './dailyForecast.module.scss';
 const DailyForecast = ({ weather }) => {
     return (
         <>
             {weather.daily.map((day, index) => (
-                <div key={day.dt} className="daily-forecast">
-                    <p className="time">
+                <div key={day.dt} className={styles['daily-forecast']}>
+                    <p className={styles.time}>
                         {index === 0
                             ? 'Today'
                             : moment(day.dt * 1000).format('DD MMM')}
@@ -14,7 +15,7 @@ const DailyForecast = ({ weather }) => {
                         {day.temp.day.toFixed(0)}° / {day.temp.night.toFixed(0)}
                         °
                     </h2>
-                    <h2 className="forecast-desc">
+                    <h2 className={styles["forecast-desc"]}>
                         Feels like {day.feels_like.day.toFixed(0)}°C
                     </h2>
                 </div>
