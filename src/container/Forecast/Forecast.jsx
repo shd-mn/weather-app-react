@@ -16,7 +16,7 @@ const Forecast = () => {
         <section className={styles.forecast}>
             <div className={styles['forecast-btn-group']}>
                 <Button
-                    className={`${show ? "" : styles.selected }`}
+                    className={`${show ? '' : styles.selected}`}
                     onClick={() => setShow(false)}
                 >
                     8-day forecast
@@ -25,21 +25,22 @@ const Forecast = () => {
                     className={`${show ? styles.selected : ''}`}
                     onClick={() => setShow(true)}
                 >
-                    48-hour forecast
+                    24-hour forecast
                 </Button>
             </div>
-
-            <ScrollContainer className={styles['forecast-content']}>
-                {show ? (
-                    <HourlyForecast weather={weather} />
-                ) : (
-                    <DailyForecast weather={weather} />
-                )}
-            </ScrollContainer>
-            {/* <div>
-                <button type="button">prev</button>
-                <button type="button">next</button>
-            </div> */}
+            <div className={styles['forecast-content']}>
+                <ScrollContainer className={styles['forecast-content']}>
+                    {show ? (
+                        <HourlyForecast weather={weather} />
+                    ) : (
+                        <DailyForecast weather={weather} />
+                    )}
+                </ScrollContainer>
+                <div className={styles['nav-btn-group']}>
+                    <button type="button" className={styles['prev-btn']}>prev</button>
+                    <button type="button" className={styles['next-btn']}>next</button>
+                </div>
+            </div>
         </section>
     );
 };

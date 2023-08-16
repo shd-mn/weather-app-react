@@ -2,13 +2,12 @@
 
 .forecast {
     min-height: 50%;
-    background-color: aqua;
     height: auto;
     padding-top: 4rem;
 }
 
 .forecast-btn-group {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 
     button {
         background: $primary-clr;
@@ -32,14 +31,30 @@
 }
 
 .forecast-content {
-    background-color: red;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.scrool-container {
+    min-height: 20rem;
     height: 100%;
-    width: 94%;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    display: flex;
+    // display: grid;
+    // grid-template-columns: repeat(12, 1fr);
     gap: 2rem;
 
-    overflow-x: auto;
     user-select: none;
-    margin-top: auto;
+}
+
+.nav-btn-group {
+}
+
+.prev-btn,
+.next-btn {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    background: $primary-clr;
+    color: white;
 }
