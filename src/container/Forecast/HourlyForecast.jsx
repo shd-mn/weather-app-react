@@ -6,7 +6,7 @@ const HourlyForecast = ({ weather }) => {
     return (
         <>
             {weather.hourly.slice(0, 24).map((hour, index) => (
-                <div key={hour.dt} className={styles['hourly-forecast']}>
+                <article key={hour.dt} className={styles['hourly-forecast']}>
                     <p className="time">
                         {index === 0
                             ? 'Now'
@@ -20,7 +20,7 @@ const HourlyForecast = ({ weather }) => {
                     <h2 className={styles['forecast-desc']}>
                         Feels like {hour.feels_like.toFixed(0)}°C
                     </h2>
-                </div>
+                </article>
             ))}
         </>
     );

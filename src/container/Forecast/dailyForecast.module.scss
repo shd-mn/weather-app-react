@@ -2,8 +2,7 @@
 
 .daily-forecast {
     min-width: 16rem;
-    height: 100%;
-
+    height: 20rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,7 +10,6 @@
     padding: 1rem 0.8rem;
     border-radius: 5px;
     background-image: linear-gradient(to bottom, $overlay-clr, transparent);
-
     transition: all 0.3s;
 
     svg {
@@ -29,6 +27,7 @@
         font-weight: 300;
         visibility: hidden;
         opacity: 0;
+        margin-bottom: auto;
         transition: all 0.3s ease-in-out;
     }
 
