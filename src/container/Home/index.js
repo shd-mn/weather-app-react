@@ -5,7 +5,6 @@ import {
     fetchWeather,
     setAlert,
 } from '../../redux/weatherSlice';
-import Alert from '../../components/Alert';
 import CurrentWeather from '../CurrentWeather/CurrentWeather';
 import Forecast from '../Forecast/Forecast';
 
@@ -35,7 +34,6 @@ function HomePage() {
     return (
         <main>
             <div className="container">
-                <Alert />
                 <CurrentWeather />
                 <Forecast />
             </div>

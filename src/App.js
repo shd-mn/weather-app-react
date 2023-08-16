@@ -1,8 +1,14 @@
 import React from 'react';
 
 import HomePage from './container/Home';
+import Alert from './components/Alert';
 function App() {
-    return <HomePage />;
+    return (
+        <>
+            <Alert />
+            <HomePage />
+        </>
+    );
 }
 
 export default App;

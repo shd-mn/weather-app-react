@@ -83,18 +83,4 @@ main {
     margin: 0 auto;
 }
 
-.gap {
-    height: auto;
-}
 
-.alert {
-    width: 80%;
-    position: absolute;
-    font-size: 1.6rem;
-    padding: 1rem;
-    background-color: $alert-clr;
-    top: 2rem;
-    left: 50%;
-
-    transform: translateX(-50%);
-}
