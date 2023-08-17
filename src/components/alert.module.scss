@@ -1,6 +1,10 @@
 @use '../scss/' as *;
 
 .alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
     position: absolute;
     font-size: 1.6rem;
     padding: 1rem 3rem;
@@ -10,4 +14,13 @@
     left: 50%;
 
     transform: translateX(-50%);
+
+    button {
+        background: none;
+        color: white;
+        &:hover {
+            color: rgb(226, 226, 226);
+            cursor: pointer;
+        }
+    }
 }

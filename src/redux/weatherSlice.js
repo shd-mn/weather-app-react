@@ -33,9 +33,8 @@ export const weatherSlice = createSlice({
     name: 'weatherSlice',
     initialState,
     reducers: {
-        setAlert: (state) => {
-            state.alert =
-                'Location access denied, please allow the site to access your location or manually search your location.';
+        setAlert: (state, action) => {
+            state.alert = action.payload;
         },
     },
     extraReducers: (builder) => {

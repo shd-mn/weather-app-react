@@ -24,7 +24,11 @@ function HomePage() {
                     dispatch(fetchWeather({ lat, lon }));
                 },
                 function () {
-                    dispatch(setAlert());
+                    dispatch(
+                        setAlert(
+                            'Location access denied, please allow the site to access your location or manually search your location.'
+                        )
+                    );
                 }
             );
         } else {
