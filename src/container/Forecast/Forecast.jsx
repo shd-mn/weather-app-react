@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import DailyForecast from './DailyForecast';
 import HourlyForecast from './HourlyForecast';
-import { Button } from '../../components/index';
+import { Button } from '../../components/UI/index';
 import styles from './forecast.module.scss';
 
 const Forecast = () => {
@@ -30,15 +30,30 @@ const Forecast = () => {
             </div>
             <div className={styles['forecast-content']}>
                 <ScrollContainer className={styles['forecast-content']}>
-                    {show ? (
-                        <HourlyForecast weather={weather} />
-                    ) : (
-                        <DailyForecast weather={weather} />
-                    )}
+                    {show
+                        ? weather.hourly.map((hour, index) => (
+                              <HourlyForecast
+                                  key={index}
+                                  hour={hour}
+                                  weather={weather}
+                                  index={index}
+                              />
+                          ))
+                        : weather.daily.map((day, index) => (
+                              <DailyForecast
+                                  key={index}
+                                  day={day}
+                                  index={index}
+                              />
+                          ))}
                 </ScrollContainer>
                 <div className={styles['nav-btn-group']}>
-                    <button type="button" className={styles['prev-btn']}>prev</button>
-                    <button type="button" className={styles['next-btn']}>next</button>
+                    <button type="button" className={styles['prev-btn']}>
+                        prev
+                    </button>
+                    <button type="button" className={styles['next-btn']}>
+                        next
+                    </button>
                 </div>
             </div>
         </section>
