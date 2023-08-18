@@ -12,43 +12,16 @@
     background-image: linear-gradient(to bottom, $overlay-clr, transparent);
 
     &:hover {
-        opacity: 1;
         background-color: $hover-clr;
         box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.329);
         cursor: -webkit-grab;
         cursor: grab;
-
-        .forecast-info {
-            visibility: visible;
-            opacity: 1;
-        }
     }
 }
 
 .time {
     margin-bottom: 1rem;
     align-self: flex-start;
-}
-
-.forecast-info {
-    display: flex;
-    gap: 0.5rem;
-    flex-direction: column;
-    align-items: start;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.2s;
-    font-size: 1.6rem;
-}
-
-.feels-like {
-    font-size: 1.8rem;
-}
-
-.info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
 }
 
 .tomorrow {
