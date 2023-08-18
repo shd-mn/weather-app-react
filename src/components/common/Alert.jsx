@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { setAlert } from '../redux/weatherSlice';
+import { setAlert } from '../../redux/weatherSlice';
 // setAlert
 import styles from './alert.module.scss';
-import Icon from '../icons';
+import Icon from '../../icons';
 const Alert = () => {
     const dispatch = useDispatch();
     const { alert } = useSelector((state) => state);
