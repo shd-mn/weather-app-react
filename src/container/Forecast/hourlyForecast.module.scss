@@ -1,44 +1,60 @@
 @use '../../scss/' as *;
+
 .hourly-forecast {
-    min-width: 16rem;
-    height: 20rem;
+    min-width: 18rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 
     padding: 1rem 0.8rem;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     background-image: linear-gradient(to bottom, $overlay-clr, transparent);
-
-    transition: all 0.3s;
-
-    svg {
-        width: 2.4rem;
-        height: 2.4rem;
-    }
-
-    .time {
-        margin-bottom: 1rem;
-        align-self: flex-start;
-    }
-
-    .forecast-desc {
-        font-size: 1.8rem;
-        font-weight: 300;
-        visibility: hidden;
-        opacity: 0;
-        transition: all 0.3s ease-in-out;
-    }
 
     &:hover {
         opacity: 1;
         background-color: $hover-clr;
         box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.329);
+        cursor: -webkit-grab;
         cursor: grab;
 
-        .forecast-desc {
+        .forecast-info {
             visibility: visible;
             opacity: 1;
         }
     }
+}
+
+.time {
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+
+.forecast-info {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: start;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+    font-size: 1.6rem;
+}
+
+.feels-like {
+    font-size: 1.8rem;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tomorrow {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(23, 23, 43, 0.6),
+        transparent
+    );
 }
